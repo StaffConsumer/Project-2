@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class CountDown : MonoBehaviour {
 
 	Text t;
+	int orig;
 
 	// Use this for initialization
 	void Start () 
 	{
 		t = GetComponent<Text> ();
+		orig = t.fontSize;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +24,7 @@ public class CountDown : MonoBehaviour {
 		else if(Spawner.GameStarted)
 		{
 			t.text = "GO!";
-			t.fontSize = 100;
+			t.fontSize = orig;
 		}
 		else
 		{
@@ -30,7 +32,7 @@ public class CountDown : MonoBehaviour {
 			
 			int nextSecond = Spawner.StartTimer % 60;
 			float txtSize = ((float)nextSecond / 60);
-			txtSize *= 100;
+			txtSize *= orig;
 			
 			t.fontSize = (int)txtSize;
 			t.text = Display.ToString ();

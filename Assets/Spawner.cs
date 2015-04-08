@@ -10,6 +10,9 @@ public class Spawner : MonoBehaviour {
 	[HideInInspector]
 	public static int StartTimerR;
 
+	public static int Seconds = 0;
+	private static int GameTimer = 0;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -28,10 +31,15 @@ public class Spawner : MonoBehaviour {
 			{
 				Deleted = true;
 			}
+
+			GameTimer++;
+			Seconds = (GameTimer / 60);
 		}
 		else
 		{
 			StartTimer--;
 		}
+
+
 	}
 }
