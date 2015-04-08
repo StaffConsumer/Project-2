@@ -17,6 +17,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
+		//Wills codes
+		public Transform m_Cam;
+		private Vector3 m_CamForward;    
+
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
@@ -41,6 +45,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+			// get the transform of the main camera
+			if (Camera.main != null)
+			{
+				m_Cam = Camera.main.transform;
+			}
+			else
+			{
+				Debug.LogWarning(
+					"Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.");
+				// we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
+			}
 		}
 
 
@@ -166,20 +182,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			float h = CrossPlatformInputManager.GetAxis("Horizontal");
 			float v = CrossPlatformInputManager.GetAxis("Vertical");
 
-
 			if (m_Cam != null)
 			{
+				float spd = 2f;
 				// calculate camera relative direction to move:
 				m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-				m_Move = v*m_CamForward + h*m_Cam.right;
+				Vector3 m_Move = v*m_CamForward * spd + h*m_Cam.right * spd;
+				m_Rigidbody.AddForce(m_Move);
 			}
 			else
 			{
 				// we use world-relative directions in the case of no main camera
-				m_Move = v*Vector3.forward + h*Vector3.right;
+				Vector3 m_Move = v*Vector3.forward + h*Vector3.right;
+				m_Rigidbody.AddForce(m_Move);
 			}
 
-			m_Rigidbody.AddForce(
 		}
 
 

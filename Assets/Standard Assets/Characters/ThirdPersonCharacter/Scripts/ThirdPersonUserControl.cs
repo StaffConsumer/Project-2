@@ -35,12 +35,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
-        }
-
+	            if (!m_Jump)
+	            {
+	                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+	            }
+		}       
 
         // Fixed update is called in sync with physics
         private void FixedUpdate()
