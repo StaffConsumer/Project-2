@@ -56,6 +56,10 @@ public class FallingBlock : MonoBehaviour {
 		{
 			Fall();
 		}
+		else if(c.gameObject.tag == "Bullet")
+		{
+			Destroy(c.gameObject);
+		}
 	}
 
 	void OnTriggerEnter(Collider c)
@@ -63,6 +67,11 @@ public class FallingBlock : MonoBehaviour {
 		if(c.gameObject.tag.Equals("Player"))
 		{
 			Fall();
+		}
+
+		else if(c.gameObject.tag == "Bullet")
+		{
+			Destroy(c.gameObject);
 		}
 	}
 }
