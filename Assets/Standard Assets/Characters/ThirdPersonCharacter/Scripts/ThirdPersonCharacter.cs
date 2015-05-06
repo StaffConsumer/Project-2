@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -18,7 +19,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
 		//Wills codes
-		public Transform m_Cam;
+		public Camera m_Cam;
 		private Vector3 m_CamForward;    
 
 		Rigidbody m_Rigidbody;
@@ -33,7 +34,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-
+		public bool Local_Player = false;
 
 		void Start()
 		{
@@ -49,7 +50,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// get the transform of the main camera
 			if (Camera.main != null)
 			{
-				m_Cam = Camera.main.transform;
+				m_Cam = Camera.main;
 			}
 			else
 			{
@@ -66,30 +67,33 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			if (move.magnitude > 1f) move.Normalize();
-			move = transform.InverseTransformDirection(move);
-			CheckGroundStatus();
-			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-			m_TurnAmount = Mathf.Atan2(move.x, move.z);
-			m_ForwardAmount = move.z;
-
-			ApplyExtraTurnRotation();
-
-			// control and velocity handling is different when grounded and airborne:
-			if (m_IsGrounded)
+			if(Local_Player)
 			{
-				HandleGroundedMovement(crouch, jump);
-			}
-			else
-			{
-				HandleAirborneMovement();
-			}
+				if (move.magnitude > 1f) move.Normalize();
+				move = transform.InverseTransformDirection(move);
+				CheckGroundStatus();
+				move = Vector3.ProjectOnPlane(move, m_GroundNormal);
+				m_TurnAmount = Mathf.Atan2(move.x, move.z);
+				m_ForwardAmount = move.z;
 
-			ScaleCapsuleForCrouching(crouch);
-			PreventStandingInLowHeadroom();
+				ApplyExtraTurnRotation();
 
-			// send input and other state parameters to the animator
-			UpdateAnimator(move);
+				// control and velocity handling is different when grounded and airborne:
+				if (m_IsGrounded)
+				{
+					HandleGroundedMovement(crouch, jump);
+				}
+				else
+				{
+					HandleAirborneMovement();
+				}
+
+				ScaleCapsuleForCrouching(crouch);
+				PreventStandingInLowHeadroom();
+
+				// send input and other state parameters to the animator
+				UpdateAnimator(move);
+			}
 		}
 
 
@@ -178,23 +182,59 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
 
-			//wills code
-			float h = CrossPlatformInputManager.GetAxis("Horizontal");
-			float v = CrossPlatformInputManager.GetAxis("Vertical");
+			if(Local_Player)
+			{
+				//wills code
+				float h = 0;
+				float v = 0;
 
-			if (m_Cam != null)
-			{
-				float spd = 2f;
-				// calculate camera relative direction to move:
-				m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-				Vector3 m_Move = v*m_CamForward * spd + h*m_Cam.right * spd;
-				m_Rigidbody.AddForce(m_Move);
-			}
-			else
-			{
-				// we use world-relative directions in the case of no main camera
-				Vector3 m_Move = v*Vector3.forward + h*Vector3.right;
-				m_Rigidbody.AddForce(m_Move);
+				//is this player playing online?
+				if(this.GetComponent<ThirdPersonUserControl>() != null)
+				{
+					h = CrossPlatformInputManager.GetAxis("Horizontal");
+					v = CrossPlatformInputManager.GetAxis("Vertical");
+				}
+				else //he is not
+				{
+					LocalPersonUserControl lus = GetComponent<LocalPersonUserControl>();
+					pid = lus.PLAYERID;
+
+					switch(pid)
+					{
+						case 1:
+							h = CrossPlatformInputManager.GetAxis("p1Horizontal");
+							v = CrossPlatformInputManager.GetAxis("p1Vertical");
+							break;
+						case 2:
+							h = CrossPlatformInputManager.GetAxis("p2Horizontal");
+							v = CrossPlatformInputManager.GetAxis("p2Vertical");
+							break;
+						case 3:
+							h = CrossPlatformInputManager.GetAxis("p3Horizontal");
+							v = CrossPlatformInputManager.GetAxis("p3Vertical");
+							break;
+						case 4:
+							h = CrossPlatformInputManager.GetAxis("p4Horizontal");
+							v = CrossPlatformInputManager.GetAxis("p4Vertical");
+							break;
+					}
+				}
+
+				if (m_Cam != null)
+				{
+					float spd = 2f;
+					// calculate camera relative direction to move:
+					m_CamForward = Vector3.Scale(m_Cam.transform.forward, new Vector3(1, 0, 1)).normalized;
+					Vector3 m_Move = v*m_CamForward * spd + h*m_Cam.transform.right * spd;
+					m_Rigidbody.AddForce(m_Move);
+				}
+				else
+				{
+					// we use world-relative directions in the case of no main camera
+					Vector3 m_Move = v*Vector3.forward + h*Vector3.right;
+					m_Rigidbody.AddForce(m_Move);
+				}
+
 			}
 
 		}
@@ -203,7 +243,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void HandleGroundedMovement(bool crouch, bool jump)
 		{
 			// check whether conditions are right to allow a jump:
-			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+			if (jump && Local_Player && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
 			{
 				// jump!
 				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);

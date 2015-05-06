@@ -7,12 +7,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class ThirdPersonUserControl : MonoBehaviour
     {
+		public int PLAYERID = 1;
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+		[HideInInspector]
+		public bool Dead = false;
+		int dd = 60;
+		public Camera gameCam;
+		[HideInInspector]
+		public Camera cctvCam;
         
         private void Start()
         {
@@ -28,6 +34,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 // we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
             }
 
+			cctvCam = GameObject.Find ("CctvCamera").GetComponent<Camera> ();
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
         }
@@ -35,10 +42,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+			if(Dead)
+			{
+				dd--;
+
+				if(dd <= 0)
+				{
+					gameCam.enabled = false;
+					cctvCam.enabled = true;
+					GameObject.Destroy(this.gameObject);
+				}
+			}
+			else
+			{
 	            if (!m_Jump)
 	            {
 	                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
 	            }
+			}
 		}       
 
         // Fixed update is called in sync with physics

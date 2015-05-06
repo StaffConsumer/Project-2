@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.ThirdPerson;
 using UnityStandardAssets.ImageEffects;
+using System;
 
 public class PhaseIn : MonoBehaviour {
 
 	bool oldGameStart = false;
-	public Transform landPos;
 	public float Smooth = .07f;
 	public GameObject spotlight;
+	[HideInInspector]
+	public Vector3 init;
 	//public Camera cam;
 
 	//int initIt;
@@ -16,6 +18,7 @@ public class PhaseIn : MonoBehaviour {
 	void Start () 
 	{
 		//initIt = cam.GetComponent<Blur> ().iterations;
+		init = GetComponent<Transform> ().position;
 	}
 	
 	// Update is called once per frame
@@ -26,16 +29,26 @@ public class PhaseIn : MonoBehaviour {
 		{
 			//do nothing
 			this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-			this.gameObject.GetComponent<ThirdPersonUserControl>().enabled = true;
+
+			try
+			{
+				this.gameObject.GetComponent<ThirdPersonUserControl>().enabled = true;
+			}
+			catch(NullReferenceException e)
+			{
+
+			}
+
 			//cam.GetComponent<Blur>().enabled = false;
 			GameObject.Destroy(spotlight);
+			GetComponent<LocalPersonUserControl>().enabled = true;
 			this.enabled = false;
 		}
 		else if(!Spawner.GameStarted)
 		{
 			//bring down
 			float rat = (float)Spawner.StartTimer / Spawner.StartTimerR;
-			this.transform.position = Vector3.Slerp (this.transform.position, landPos.position, Smooth);
+			this.transform.position = Vector3.Slerp (this.transform.position, init - Vector3.up * 8.6f, Smooth);
 
 			//Blur b = cam.GetComponent<Blur>();
 			//float t = Mathf.Lerp(0, initIt, rat);
