@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
 	Text t;
+	int i;
 	// Use this for initialization
 	void Start () {
 		t = GetComponent<Text> ();
@@ -12,6 +13,11 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		t.text = "TIME: " + Spawner.Seconds.ToString ();
+		t.text = "TIME: " + (i / 60).ToString ();
+	}
+
+	void FixedUpdate()
+	{
+		i++;
 	}
 }

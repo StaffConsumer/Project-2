@@ -41,7 +41,7 @@ public class PhaseIn : MonoBehaviour {
 
 			//cam.GetComponent<Blur>().enabled = false;
 			GameObject.Destroy(spotlight);
-			GetComponent<LocalPersonUserControl>().enabled = true;
+			GetComponent<LocalUserControl>().enabled = true;
 			this.enabled = false;
 		}
 		else if(!Spawner.GameStarted)

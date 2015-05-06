@@ -16,7 +16,7 @@ Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\
 Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.106 seconds
+- Completed reload, in  0.111 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -27,24 +27,46 @@ Default clip could not be found in attached animations list.
  
 (Filename:  Line: 400)
 
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3eb0 -> priority: 1 
-  Thread -> id: 2a98 -> priority: 1 
+  Thread -> id: 29a8 -> priority: 1 
+  Thread -> id: 1788 -> priority: 1 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.684649 ms
+UnloadTime: 4.464285 ms
 Default clip could not be found in attached animations list.
  
 (Filename:  Line: 400)
 
-Default clip could not be found in attached animations list.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 645.
+Total: 0.493887 ms (FindLiveObjects: 0.052139 ms CreateObjectMapping: 0.043517 ms MarkObjects: 0.379345 ms  DeleteObjects: 0.017242 ms)
+
+Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
  
-(Filename:  Line: 400)
+(Filename:  Line: 274)
 
+Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 274)
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 4729.
-Total: 1.010353 ms (FindLiveObjects: 0.217999 ms CreateObjectMapping: 0.090320 ms MarkObjects: 0.682327 ms  DeleteObjects: 0.018885 ms)
+Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 274)
+
+Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 274)
+
+Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 274)
+
+Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 274)
 

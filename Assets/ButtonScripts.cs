@@ -13,9 +13,13 @@ public class ButtonScripts : MonoBehaviour {
 	
 	}
 
+	public void GoToLevel(string lev)
+	{
+		Application.LoadLevel (lev);
+	}
+
 	public void GoToLocal()
 	{
-		Debug.Log ("Entered Method Block.");
 		Application.LoadLevel ("localMenu");
 	}
 }

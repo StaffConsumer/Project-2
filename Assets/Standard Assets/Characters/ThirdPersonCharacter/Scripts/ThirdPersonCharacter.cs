@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -196,8 +195,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				}
 				else //he is not
 				{
-					LocalPersonUserControl lus = GetComponent<LocalPersonUserControl>();
-					pid = lus.PLAYERID;
+					//Identity lus = GetComponent<Identity>();
+					//lus.ID;
+					LocalUserControl lus = GetComponent<LocalUserControl>();
+					int pid = lus.PLAYERID;
 
 					switch(pid)
 					{

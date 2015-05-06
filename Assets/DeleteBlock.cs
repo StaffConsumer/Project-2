@@ -12,6 +12,11 @@ public class DeleteBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			Application.LoadLevel("LOCAL_Square");
+		}
+
 	}
 
 	void OnTriggerEnter(Collider col)
@@ -34,6 +39,7 @@ public class DeleteBlock : MonoBehaviour {
 			else if(tus == null)
 			{
 				GameObject.Instantiate(expl, obj.transform.position, obj.transform.rotation);
+				GameObject.Destroy(obj);
 			}
 		}
 	}
