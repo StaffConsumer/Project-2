@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class PickUpItem : MonoBehaviour {
+	public GameObject spawn;
+	public GameObject[] Items;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -19,7 +21,8 @@ public class PickUpItem : MonoBehaviour {
 		if(obj.tag == "GunPowerUp")
 		{
 			Destroy(obj);
-			this.GetComponent<ShootGun>().hasGun = true;
+			spawn.GetComponent<ShootGun>().hasGun = true;
+			Items[0].SetActive(true);
 		}
 	}
 }
