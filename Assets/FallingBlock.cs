@@ -73,5 +73,6 @@ public class FallingBlock : MonoBehaviour {
 		{
 			Destroy(c.gameObject);
 		}
+
 	}
 }
