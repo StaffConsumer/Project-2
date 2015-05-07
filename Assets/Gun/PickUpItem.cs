@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PickUpItem : MonoBehaviour {
+
 	public GameObject spawn;
 	public GameObject[] Items;
 
@@ -18,6 +19,7 @@ public class PickUpItem : MonoBehaviour {
 	void OnTriggerEnter(Collider col)
 	{
 		GameObject obj = col.gameObject;
+
 		if(obj.tag == "GunPowerUp")
 		{
 			Destroy(obj);
