@@ -21,6 +21,14 @@ public class Bullet : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnTriggerExit(Collider c)
+	{
+		if(c.gameObject.tag == "LevelBounds")
+		{
+			GameObject.Destroy(this.gameObject);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update ()

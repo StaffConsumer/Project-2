@@ -16,7 +16,7 @@ Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\
 Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.111 seconds
+- Completed reload, in  0.120 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -25,48 +25,36 @@ Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\
 Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\System.dll (this message is harmless)
 Default clip could not be found in attached animations list.
  
-(Filename:  Line: 400)
+(Filename: C:/buildslave/unity/build/Runtime/Animation/Animation.cpp Line: 400)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 29a8 -> priority: 1 
-  Thread -> id: 1788 -> priority: 1 
+  Thread -> id: 1d18 -> priority: 1 
+  Thread -> id: 1aa4 -> priority: 1 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.464285 ms
+UnloadTime: 6.416435 ms
 Default clip could not be found in attached animations list.
  
-(Filename:  Line: 400)
+(Filename: C:/buildslave/unity/build/Runtime/Animation/Animation.cpp Line: 400)
 
+System memory in use before: 143.3 MB.
+System memory in use after: 143.4 MB.
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 645.
-Total: 0.493887 ms (FindLiveObjects: 0.052139 ms CreateObjectMapping: 0.043517 ms MarkObjects: 0.379345 ms  DeleteObjects: 0.017242 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 648.
+Total: 0.417526 ms (FindLiveObjects: 0.061171 ms CreateObjectMapping: 0.027096 ms MarkObjects: 0.310783 ms  DeleteObjects: 0.016832 ms)
 
-Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
-To add a level to the build settings use the menu File->Build Settings...
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.915519 ms
+Default clip could not be found in attached animations list.
  
-(Filename:  Line: 274)
+(Filename: C:/buildslave/unity/build/Runtime/Animation/Animation.cpp Line: 400)
 
-Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
-To add a level to the build settings use the menu File->Build Settings...
+Default clip could not be found in attached animations list.
  
-(Filename:  Line: 274)
+(Filename: C:/buildslave/unity/build/Runtime/Animation/Animation.cpp Line: 400)
 
-Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
-To add a level to the build settings use the menu File->Build Settings...
- 
-(Filename:  Line: 274)
+System memory in use before: 35.7 MB.
+System memory in use after: 35.9 MB.
 
-Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
-To add a level to the build settings use the menu File->Build Settings...
- 
-(Filename:  Line: 274)
-
-Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
-To add a level to the build settings use the menu File->Build Settings...
- 
-(Filename:  Line: 274)
-
-Level 'LOCAL_Square' (-1) couldn't be loaded because it has not been added to the build settings.
-To add a level to the build settings use the menu File->Build Settings...
- 
-(Filename:  Line: 274)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 5583.
+Total: 1.171700 ms (FindLiveObjects: 0.215126 ms CreateObjectMapping: 0.127269 ms MarkObjects: 0.808366 ms  DeleteObjects: 0.020116 ms)
 

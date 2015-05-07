@@ -17,6 +17,11 @@ public class Spawner : MonoBehaviour {
 
 	public bool Active = false;
 
+	public AudioClip t_3;
+	public AudioClip t_2;
+	public AudioClip t_1;
+	public AudioClip t_go;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -37,6 +42,24 @@ public class Spawner : MonoBehaviour {
 			else if(StartTimer > 0)
 			{
 				StartTimer--;
+
+				if(StartTimer == 159)
+				{
+					//play 3
+					AudioSource.PlayClipAtPoint(t_3, Camera.main.transform.position);
+				}
+				else if(StartTimer == 120)
+				{
+					AudioSource.PlayClipAtPoint(t_2, Camera.main.transform.position);
+				}
+				else if(StartTimer == 60)
+				{
+					AudioSource.PlayClipAtPoint(t_1, Camera.main.transform.position);
+				}
+				else if(StartTimer == 0)
+				{
+					AudioSource.PlayClipAtPoint(t_go, Camera.main.transform.position);
+				}
 			}
 
 			if(GameStarted)
