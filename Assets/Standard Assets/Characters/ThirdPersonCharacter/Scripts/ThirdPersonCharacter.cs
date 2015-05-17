@@ -35,6 +35,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		public bool Local_Player = false;
 
+		public GameObject WC;
+
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
@@ -276,6 +278,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+		void Update()
+		{
+			if(WC.activeInHierarchy)
+			{
+				this.enabled = false;
+				GetComponent<LocalUserControl>().enabled = false;
+				GetComponent<Animator>().enabled = false;
+			}
+		}
 
 		void CheckGroundStatus()
 		{

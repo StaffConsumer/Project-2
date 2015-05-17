@@ -9,6 +9,9 @@ public class TWController : MonoBehaviour {
 	private Vector3 Velocity;
 	private Vector3 Gravity;
 
+	public GameObject WC;
+	public GameObject GOC;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,6 +22,8 @@ public class TWController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
+
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 

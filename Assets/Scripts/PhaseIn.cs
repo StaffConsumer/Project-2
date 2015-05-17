@@ -33,6 +33,7 @@ public class PhaseIn : MonoBehaviour {
 			try
 			{
 				this.gameObject.GetComponent<ThirdPersonUserControl>().enabled = true;
+
 			}
 			catch(NullReferenceException e)
 			{

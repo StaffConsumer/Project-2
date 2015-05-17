@@ -22,4 +22,9 @@ public class ButtonScripts : MonoBehaviour {
 	{
 		Application.LoadLevel ("localMenu");
 	}
+
+	public void Retry()
+	{
+		Application.LoadLevel (Application.loadedLevelName);
+	}
 }

@@ -28,8 +28,8 @@ public class CountDown : MonoBehaviour {
 		}
 		else
 		{
+
 			int Display = Spawner.StartTimer / 60 + 1;
-			
 			int nextSecond = Spawner.StartTimer % 60;
 			float txtSize = ((float)nextSecond / 60);
 			txtSize *= orig;

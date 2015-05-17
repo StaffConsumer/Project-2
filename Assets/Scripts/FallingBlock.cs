@@ -11,6 +11,9 @@ public class FallingBlock : MonoBehaviour {
 	[HideInInspector]
 	public int TimeToFallReset = 60;
 
+	public GameObject WinnerCanvas;
+	public GameObject GameOverCanvas;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -31,7 +34,7 @@ public class FallingBlock : MonoBehaviour {
 			}
 			else if(TimeToFall <= 0)
 			{
-				Debug.Log("Block Falling Now...");
+
 				this.GetComponent<Rigidbody> ().velocity += Vector3.down * speed;
 				this.GetComponent<Rigidbody> ().AddForce (Vector3.down * speed);
 				this.transform.position -= Vector3.up * speed;
@@ -40,6 +43,11 @@ public class FallingBlock : MonoBehaviour {
 				{
 					GameObject.Destroy(this.gameObject);
 				}
+			}
+
+			if(WinnerCanvas.activeInHierarchy || GameOverCanvas.activeInHierarchy)
+			{
+				Triggered = false;
 			}
 		}
 	}

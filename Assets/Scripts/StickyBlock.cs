@@ -58,10 +58,6 @@ public class StickyBlock : MonoBehaviour {
 			{
 				Debug.Log ("Stuck");
 				timer = startTime;
-				//c.gameObject.GetComponent<LocalUserControl>().m_Jump = false;
-				//c.gameObject.GetComponent<LocalUserControl>().m_Move = Vector3.zero;
-
-				c.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			}
 
 		}

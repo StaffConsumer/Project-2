@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
-	public static int StartTimer = 4 * 60;
+	public static int StartTimer = 3 * 60;
 	public static bool GameStarted = false;
 	public static bool Deleted = false;
 
@@ -43,6 +43,7 @@ public class Spawner : MonoBehaviour {
 			{
 				StartTimer--;
 
+				if(StartTimer == 175)
 				{
 					//play 3
 					AudioSource.PlayClipAtPoint(t_3, Camera.main.transform.position);
