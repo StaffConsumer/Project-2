@@ -32,5 +32,9 @@ public class Winner : MonoBehaviour {
 			}
 			
 		}
+		else if(count == 0)
+		{
+			GameOverCanvas.SetActive(true);
+		}
 	}
 }
