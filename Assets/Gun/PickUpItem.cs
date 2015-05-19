@@ -27,6 +27,7 @@ public class PickUpItem : MonoBehaviour {
 			spawn.GetComponent<ThrowBomb>().hasBomb = false;
 			Items[0].SetActive(true);
 			Items[1].SetActive(false);
+			Items[2].SetActive(false);
 		}
 		if(obj.tag == "BombPowerUp")
 		{
@@ -35,6 +36,17 @@ public class PickUpItem : MonoBehaviour {
 			spawn.GetComponent<ShootGun>().hasGun = false;
 			Items[0].SetActive(false);
 			Items[1].SetActive(true);
+			Items[2].SetActive(false);
+		}
+		if(obj.tag == "JetpackPowerUp")
+		{
+			Destroy(obj);
+			spawn.GetComponent<ThrowBomb>().hasBomb = true;
+			spawn.GetComponent<ShootGun>().hasGun = false;
+			Items[0].SetActive(false);
+			Items[1].SetActive(false);
+			Items[2].SetActive(true);
+
 		}
 	}
 }
