@@ -72,6 +72,8 @@ public class ThirdPersonController : MonoBehaviour
     private bool jumping = false;
     private bool jumpingReachedApex = false;
 
+	bool stuck = false;
+
     // Are we moving backwards (This locks the camera to not do a 180 degree spin)
     private bool movingBack = false;
     // Is the user pressing any keys?
@@ -291,7 +293,7 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {        
-        if (isControllable)
+        if (isControllable && !stuck)
         {
             if (Input.GetButtonDown("Jump"))
             {
@@ -422,6 +424,11 @@ public class ThirdPersonController : MonoBehaviour
         if (hit.moveDirection.y > 0.01f)
             return;
     }
+
+	public void Stuck()
+	{
+		stuck = true;
+	}
 
     public float GetSpeed()
     {

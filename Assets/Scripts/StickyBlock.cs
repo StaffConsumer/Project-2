@@ -58,6 +58,7 @@ public class StickyBlock : MonoBehaviour {
 			{
 				Debug.Log ("Stuck");
 				timer = startTime;
+				c.gameObject.GetComponent<LocalUserControl>().Stuck();
 			}
 
 		}

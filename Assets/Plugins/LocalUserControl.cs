@@ -17,9 +17,13 @@ public class LocalUserControl : MonoBehaviour {
 	public Camera gameCam;
 	[HideInInspector]
 	public Camera cctvCam;
-	
+	bool stuck = false;
+	int stuckT = 60 * 3;
+	int stuckTR = 60 * 3;
+
 	void Start()
 	{
+		stuckTR = stuckT;
 		// get the transform of the main camera
 		if (Camera.main != null)
 		{
@@ -73,120 +77,133 @@ public class LocalUserControl : MonoBehaviour {
 			}
 		}
 	}       
+
+	public void Stuck()
+	{
+		stuck = true;
+	}
 	
 	// Fixed update is called in sync with physics
 	void FixedUpdate()
 	{
-		switch(PLAYERID)
+		if (!stuck) 
 		{
-		case 1:
+			switch (PLAYERID) {
+			case 1:
 			// read inputs
-			float h = CrossPlatformInputManager.GetAxis("p1Horizontal");
-			float v = CrossPlatformInputManager.GetAxis("p1Vertical");
-			bool crouch = Input.GetButton("p1Crouch");
+				float h = CrossPlatformInputManager.GetAxis ("p1Horizontal");
+				float v = CrossPlatformInputManager.GetAxis ("p1Vertical");
+				bool crouch = Input.GetButton ("p1Crouch");
 			
 			// calculate move direction to pass to character
-			if (m_Cam != null)
-			{
-				// calculate camera relative direction to move:
-				m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-				m_Move = v*m_CamForward + h*m_Cam.right;
-			}
-			else
-			{
-				// we use world-relative directions in the case of no main camera
-				m_Move = v*Vector3.forward + h*Vector3.right;
-			}
+				if (m_Cam != null) {
+					// calculate camera relative direction to move:
+					m_CamForward = Vector3.Scale (m_Cam.forward, new Vector3 (1, 0, 1)).normalized;
+					m_Move = v * m_CamForward + h * m_Cam.right;
+				} else {
+					// we use world-relative directions in the case of no main camera
+					m_Move = v * Vector3.forward + h * Vector3.right;
+				}
 			#if !MOBILE_INPUT
 			// walk speed multiplier
-			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 1.5f;
+				if (Input.GetKey (KeyCode.LeftShift))
+					m_Move *= 1.5f;
 			#endif
 			
 			// pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, m_Jump);
-			m_Jump = false;
-			break;
-		case 2:
+				m_Character.Move (m_Move, crouch, m_Jump);
+				m_Jump = false;
+				break;
+			case 2:
 			// read inputs
-			h = CrossPlatformInputManager.GetAxis("p2Horizontal");
-			v = CrossPlatformInputManager.GetAxis("p2Vertical");
-			crouch = Input.GetButton("p2Crouch");
+				h = CrossPlatformInputManager.GetAxis ("p2Horizontal");
+				v = CrossPlatformInputManager.GetAxis ("p2Vertical");
+				crouch = Input.GetButton ("p2Crouch");
 			
 			// calculate move direction to pass to character
-			if (m_Cam != null)
-			{
-				// calculate camera relative direction to move:
-				m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-				m_Move = v*m_CamForward + h*m_Cam.right;
-			}
-			else
-			{
-				// we use world-relative directions in the case of no main camera
-				m_Move = v*Vector3.forward + h*Vector3.right;
-			}
+				if (m_Cam != null) {
+					// calculate camera relative direction to move:
+					m_CamForward = Vector3.Scale (m_Cam.forward, new Vector3 (1, 0, 1)).normalized;
+					m_Move = v * m_CamForward + h * m_Cam.right;
+				} else {
+					// we use world-relative directions in the case of no main camera
+					m_Move = v * Vector3.forward + h * Vector3.right;
+				}
 			#if !MOBILE_INPUT
 			// walk speed multiplier
-			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 1.5f;
+				if (Input.GetKey (KeyCode.LeftShift))
+					m_Move *= 1.5f;
 			#endif
 			
 			// pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, m_Jump);
-			m_Jump = false;
-			break;
-		case 3:
+				m_Character.Move (m_Move, crouch, m_Jump);
+				m_Jump = false;
+				break;
+			case 3:
 			// read inputs
-			h = CrossPlatformInputManager.GetAxis("p3Horizontal");
-			v = CrossPlatformInputManager.GetAxis("p3Vertical");
-			crouch = Input.GetButton("p3Crouch");
+				h = CrossPlatformInputManager.GetAxis ("p3Horizontal");
+				v = CrossPlatformInputManager.GetAxis ("p3Vertical");
+				crouch = Input.GetButton ("p3Crouch");
 			
 			// calculate move direction to pass to character
-			if (m_Cam != null)
-			{
-				// calculate camera relative direction to move:
-				m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-				m_Move = v*m_CamForward + h*m_Cam.right;
-			}
-			else
-			{
-				// we use world-relative directions in the case of no main camera
-				m_Move = v*Vector3.forward + h*Vector3.right;
-			}
+				if (m_Cam != null) {
+					// calculate camera relative direction to move:
+					m_CamForward = Vector3.Scale (m_Cam.forward, new Vector3 (1, 0, 1)).normalized;
+					m_Move = v * m_CamForward + h * m_Cam.right;
+				} else {
+					// we use world-relative directions in the case of no main camera
+					m_Move = v * Vector3.forward + h * Vector3.right;
+				}
 			#if !MOBILE_INPUT
 			// walk speed multiplier
-			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 1.5f;
+				if (Input.GetKey (KeyCode.LeftShift))
+					m_Move *= 1.5f;
 			#endif
 			
 			// pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, m_Jump);
-			m_Jump = false;
-			break;
-		case 4:
+				m_Character.Move (m_Move, crouch, m_Jump);
+				m_Jump = false;
+				break;
+			case 4:
 			// read inputs
-			h = CrossPlatformInputManager.GetAxis("p4Horizontal");
-			v = CrossPlatformInputManager.GetAxis("p4Vertical");
-			crouch = Input.GetButton("p4Crouch");
+				h = CrossPlatformInputManager.GetAxis ("p4Horizontal");
+				v = CrossPlatformInputManager.GetAxis ("p4Vertical");
+				crouch = Input.GetButton ("p4Crouch");
 			
 			// calculate move direction to pass to character
-			if (m_Cam != null)
-			{
-				// calculate camera relative direction to move:
-				m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-				m_Move = v*m_CamForward + h*m_Cam.right;
-			}
-			else
-			{
-				// we use world-relative directions in the case of no main camera
-				m_Move = v*Vector3.forward + h*Vector3.right;
-			}
+				if (m_Cam != null) {
+					// calculate camera relative direction to move:
+					m_CamForward = Vector3.Scale (m_Cam.forward, new Vector3 (1, 0, 1)).normalized;
+					m_Move = v * m_CamForward + h * m_Cam.right;
+				} else {
+					// we use world-relative directions in the case of no main camera
+					m_Move = v * Vector3.forward + h * Vector3.right;
+				}
 			#if !MOBILE_INPUT
 			// walk speed multiplier
-			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 1.5f;
+				if (Input.GetKey (KeyCode.LeftShift))
+					m_Move *= 1.5f;
 			#endif
 			
 			// pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, m_Jump);
-			m_Jump = false;
-			break;
+				m_Character.Move (m_Move, crouch, m_Jump);
+				m_Jump = false;
+				break;
+			}
+		}
+		else
+		{
+			m_Character.Move(Vector3.zero, true, false);
+
+			stuckT--;
+
+			if(stuckT <= 0)
+			{
+				stuckT = stuckTR;
+				stuck = false;
+			}
+
+
 		}
 	}
 }
