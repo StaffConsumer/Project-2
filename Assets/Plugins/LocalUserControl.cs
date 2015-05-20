@@ -116,6 +116,14 @@ public class LocalUserControl : MonoBehaviour {
 				Debug.Log(jetJump.ToString());
 				Vector3 jetForce = Vector3.up;
 				m_Character.Move(jetForce, false, true);
+
+				jT -- ;
+
+				if(jT <= 0)
+				{
+					jT = jTR;
+					hasJetpack = false;
+				}
 			}
 		}
 
