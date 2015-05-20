@@ -25,27 +25,33 @@ public class PickUpItem : MonoBehaviour {
 			Destroy(obj);
 			spawn.GetComponent<ShootGun>().hasGun = true;
 			spawn.GetComponent<ThrowBomb>().hasBomb = false;
+			this.GetComponent<LocalUserControl>().hasJetpack = false;
 			Items[0].SetActive(true);
 			Items[1].SetActive(false);
 			Items[2].SetActive(false);
+			this.GetComponent<LocalUserControl>().myJetpack.active = false;
 		}
 		if(obj.tag == "BombPowerUp")
 		{
 			Destroy(obj);
 			spawn.GetComponent<ThrowBomb>().hasBomb = true;
 			spawn.GetComponent<ShootGun>().hasGun = false;
+			this.GetComponent<LocalUserControl>().hasJetpack = false;
 			Items[0].SetActive(false);
 			Items[1].SetActive(true);
 			Items[2].SetActive(false);
+			this.GetComponent<LocalUserControl>().myJetpack.active = false;
 		}
 		if(obj.tag == "JetpackPowerUp")
 		{
 			Destroy(obj);
-			spawn.GetComponent<ThrowBomb>().hasBomb = true;
+			spawn.GetComponent<ThrowBomb>().hasBomb = false;
 			spawn.GetComponent<ShootGun>().hasGun = false;
+			this.GetComponent<LocalUserControl>().hasJetpack = true;
 			Items[0].SetActive(false);
 			Items[1].SetActive(false);
 			Items[2].SetActive(true);
+			this.GetComponent<LocalUserControl>().myJetpack.active = true;
 
 		}
 	}

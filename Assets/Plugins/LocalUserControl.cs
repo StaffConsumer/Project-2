@@ -20,10 +20,15 @@ public class LocalUserControl : MonoBehaviour {
 	bool stuck = false;
 	int stuckT = 60 * 3;
 	int stuckTR = 60 * 3;
+	public bool hasJetpack = false;
+	public GameObject myJetpack;
+	int jT = 240;
+	int jTR= 240;
 
 	void Start()
 	{
 		stuckTR = stuckT;
+		myJetpack.active = false;
 		// get the transform of the main camera
 		if (Camera.main != null)
 		{
@@ -86,6 +91,34 @@ public class LocalUserControl : MonoBehaviour {
 	// Fixed update is called in sync with physics
 	void FixedUpdate()
 	{
+		bool jetJump = false;
+
+		if(hasJetpack)
+		{
+			switch(PLAYERID)
+			{
+				case 1:
+					jetJump = CrossPlatformInputManager.GetButton("p1Jump");
+					break;
+				case 2:
+					jetJump = CrossPlatformInputManager.GetButton("p2Jump");
+					break;
+				case 3:
+					jetJump = CrossPlatformInputManager.GetButton("p3Jump");
+					break;
+				case 4:
+					jetJump = CrossPlatformInputManager.GetButton("p4Jump");
+					break;
+			}
+
+			if(jetJump)
+			{
+				Debug.Log(jetJump.ToString());
+				Vector3 jetForce = Vector3.up;
+				m_Character.Move(jetForce, false, true);
+			}
+		}
+
 		if (!stuck) 
 		{
 			switch (PLAYERID) {
@@ -110,9 +143,11 @@ public class LocalUserControl : MonoBehaviour {
 					m_Move *= 1.5f;
 			#endif
 			
+				Debug.Log(m_Move.ToString() + "\n" + crouch.ToString() + "\n" +	 m_Jump.ToString());
 			// pass all parameters to the character control script
 				m_Character.Move (m_Move, crouch, m_Jump);
 				m_Jump = false;
+
 				break;
 			case 2:
 			// read inputs
