@@ -27,5 +27,17 @@ public class PickLocalLevel : MonoBehaviour {
 			Debug.Log(PlayerPrefs.GetFloat("Level") + "," + PlayerPrefs.GetFloat("Players"));
 
 		}
+		else if(PlayerPrefs.GetFloat("Level") == .5f)
+		{
+			Application.LoadLevel("LOCAL_Circle");
+			Debug.Log(PlayerPrefs.GetFloat("Level") + "," + PlayerPrefs.GetFloat("Players"));
+			
+		}
+		else if(PlayerPrefs.GetFloat("Level") == 1f)
+		{
+			Application.LoadLevel("LOCAL_Legos");
+			Debug.Log(PlayerPrefs.GetFloat("Level") + "," + PlayerPrefs.GetFloat("Players"));
+			
+		}
 	}
 }
