@@ -2,168 +2,43 @@ Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Renderer: Intel(R) HD Graphics 4600 (ID=0x416)
     Vendor:   Intel
     VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 - Completed reload, in  0.162 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Matt\Documents\GitHub\Project-2\Project-2\testBuild_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\socce_000\Documents\GitHub\Project-2\testBuild_Data\Managed\System.dll (this message is harmless)
 Default clip could not be found in attached animations list.
  
-(Filename:  Line: 400)
+(Filename: C:/buildslave/unity/build/Runtime/Animation/Animation.cpp Line: 400)
 
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2f80 -> priority: 1 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.894930 ms
-Default clip could not be found in attached animations list.
+Joystick connected ("Controller (Rock Candy Gamepad for Xbox 360)").
  
-(Filename:  Line: 400)
+(Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 1350)
 
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 633.
-Total: 0.359657 ms (FindLiveObjects: 0.048752 ms CreateObjectMapping: 0.056878 ms MarkObjects: 0.241197 ms  DeleteObjects: 0.012401 ms)
-
-0,0
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 19cc -> priority: 1 
+  Thread -> id: 36bc -> priority: 1 
+Joystick connected ("Controller (Rock Candy Gamepad for Xbox 360)").
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+(Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 1350)
 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.799713 ms
-Default clip could not be found in attached animations list.
+Joystick connected ("Controller (XBOX 360 For Windows)").
  
-(Filename:  Line: 400)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 6314.
-Total: 1.459157 ms (FindLiveObjects: 0.295081 ms CreateObjectMapping: 0.165074 ms MarkObjects: 0.977190 ms  DeleteObjects: 0.021382 ms)
-
-Game Started
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.732425 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 494 unused Assets to reduce memory usage. Loaded Objects now: 6316.
-Total: 1.607553 ms (FindLiveObjects: 0.204846 ms CreateObjectMapping: 0.159515 ms MarkObjects: 0.904917 ms  DeleteObjects: 0.338274 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.547534 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 488 unused Assets to reduce memory usage. Loaded Objects now: 6316.
-Total: 1.617817 ms (FindLiveObjects: 0.223235 ms CreateObjectMapping: 0.160798 ms MarkObjects: 0.853170 ms  DeleteObjects: 0.380184 ms)
-
-Stuck
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Stuck
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Stuck
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.125723 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 488 unused Assets to reduce memory usage. Loaded Objects now: 6316.
-Total: 1.686669 ms (FindLiveObjects: 0.209550 ms CreateObjectMapping: 0.156521 ms MarkObjects: 0.880968 ms  DeleteObjects: 0.438773 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.103201 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 488 unused Assets to reduce memory usage. Loaded Objects now: 6316.
-Total: 1.743975 ms (FindLiveObjects: 0.223235 ms CreateObjectMapping: 0.155666 ms MarkObjects: 0.921167 ms  DeleteObjects: 0.443477 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.009117 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 726 unused Assets to reduce memory usage. Loaded Objects now: 600.
-Total: 1.156377 ms (FindLiveObjects: 0.059016 ms CreateObjectMapping: 0.052173 ms MarkObjects: 0.171489 ms  DeleteObjects: 0.872842 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.478117 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 638.
-Total: 0.325872 ms (FindLiveObjects: 0.040627 ms CreateObjectMapping: 0.027797 ms MarkObjects: 0.246756 ms  DeleteObjects: 0.009836 ms)
-
-0,0.5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.535423 ms
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 400)
-
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 6316.
-Total: 1.409121 ms (FindLiveObjects: 0.233499 ms CreateObjectMapping: 0.146685 ms MarkObjects: 1.006698 ms  DeleteObjects: 0.021810 ms)
+(Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 1350)
 
